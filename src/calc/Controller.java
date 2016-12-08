@@ -37,10 +37,6 @@ public class Controller implements Initializable {
         resultLabel.setText(calc.result());
     }
 
-    public void onChooseMask() {
-        maskResultLabel.setText(choiceBox.getValue());
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         choiceBox.getItems().addAll(netmasks());
