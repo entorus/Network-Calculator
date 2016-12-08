@@ -14,7 +14,10 @@
    <center>
       <Pane BorderPane.alignment="CENTER">
          <children>
-            <TextField id="firstOctet" fx:id="firstOctet" layoutX="67.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="192" text="192" />
+            <TextField id="firstOctet" fx:id="firstOctet" layoutX="67.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="192" text="192">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font></TextField>
             <Label layoutX="104.0" layoutY="24.0" prefHeight="17.0" prefWidth="11.0" text=".">
                <font>
                   <Font size="14.0" />
@@ -25,23 +28,46 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField id="secondOctet" fx:id="secondOctet" layoutX="109.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="168" text="168" />
-            <TextField id="forthOctet" fx:id="fourthOctet" layoutX="194.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="1" text="1" />
+            <TextField id="secondOctet" fx:id="secondOctet" layoutX="109.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="168" text="168">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font></TextField>
+            <TextField id="forthOctet" fx:id="fourthOctet" layoutX="194.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="1" text="1">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font></TextField>
             <Label layoutX="189.0" layoutY="24.0" prefHeight="17.0" prefWidth="11.0" text=".">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField id="thirdOctet" fx:id="thirdOctet" layoutX="152.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="0" text="0" />
-            <Label id="resultLabel" fx:id="resultLabel" layoutX="67.0" layoutY="44.0" prefHeight="17.0" prefWidth="164.0" text="11000000.10101000.00000000.00000001">
+            <TextField id="thirdOctet" fx:id="thirdOctet" layoutX="152.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="0" text="0">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font></TextField>
+            <Label id="resultLabel" fx:id="resultLabel" layoutX="67.0" layoutY="44.0" prefHeight="17.0" prefWidth="185.0" text="11000000.10101000.00000000.00000001">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
-            <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClick" text="Button" />
+            <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClick" text="Button">
+               <font>
+                  <Font name="Verdana" size="11.0" />
+               </font></Button>
             <ChoiceBox id="maskChoiceBox" fx:id="choiceBox" layoutX="67.0" layoutY="63.0" prefHeight="25.0" prefWidth="166.0" />
-            <Label layoutX="8.0" layoutY="18.0" text="IP address" />
-            <Label layoutX="8.0" layoutY="67.0" text="Netmask" />
+            <Label layoutX="8.0" layoutY="18.0" text="IP address">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font></Label>
+            <Label layoutX="8.0" layoutY="67.0" text="Netmask">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font></Label>
+            <Label id="maskResultLabel" fx:id="maskResultLabel" layoutX="66.0" layoutY="95.0" prefHeight="17.0" prefWidth="185.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>

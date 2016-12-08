@@ -1,10 +1,9 @@
 package calc;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
+
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -25,6 +24,9 @@ public class Controller implements Initializable {
     Label resultLabel;
     @FXML
     ChoiceBox<String> choiceBox;
+    @FXML
+    Label maskResultLabel;
+
 
     public void onClick() {
         int first = Integer.parseInt(firstOctet.getText());
@@ -35,10 +37,15 @@ public class Controller implements Initializable {
         resultLabel.setText(calc.result());
     }
 
+    public void onChooseMask() {
+        maskResultLabel.setText(choiceBox.getValue());
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         choiceBox.getItems().addAll(netmasks());
         choiceBox.getSelectionModel().selectFirst();
+        maskResultLabel.textProperty().bind(choiceBox.getSelectionModel().selectedItemProperty());
     }
 
     private void validate(TextField textField) {
