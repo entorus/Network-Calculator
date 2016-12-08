@@ -39,7 +39,7 @@
                </font>
             </Label>
             <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClick" text="Button" />
-            <ChoiceBox id="maskChoiceBox" fx:id="choiceBox" layoutX="69.0" layoutY="63.0" prefHeight="25.0" prefWidth="166.0" />
+            <ChoiceBox id="maskChoiceBox" fx:id="choiceBox" layoutX="67.0" layoutY="63.0" prefHeight="25.0" prefWidth="166.0" />
             <Label layoutX="8.0" layoutY="18.0" text="IP address" />
             <Label layoutX="8.0" layoutY="67.0" text="Netmask" />
          </children>

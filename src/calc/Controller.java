@@ -37,11 +37,19 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        choiceBox.getItems().addAll("First", "Second", "Third");
+        choiceBox.getItems().addAll(netmasks());
         choiceBox.getSelectionModel().selectFirst();
     }
 
     private void validate(TextField textField) {
-
+        //TODO add validation
+    }
+    private String[] netmasks() {
+        String m = "111111111111111111111111111111100000000000000000000000000000000";
+        String[] array = new String[31];
+        for (int i = 0; i < 31; i++) {
+            array[i] = m.substring(i,i+32);
+        }
+        return array;
     }
 }
