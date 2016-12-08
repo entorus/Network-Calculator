@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="255.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.Controller">
+   <center>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <TextField id="firstOctet" fx:id="firstOctet" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="192" text="192" />
+            <Label layoutX="51.0" layoutY="24.0" prefHeight="17.0" prefWidth="11.0" text=".">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="93.0" layoutY="24.0" prefHeight="17.0" prefWidth="11.0" text=".">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField id="secondOctet" fx:id="secondOctet" layoutX="56.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="168" text="168" />
+            <TextField id="forthOctet" fx:id="fourthOctet" layoutX="141.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="1" text="1" />
+            <Label layoutX="136.0" layoutY="24.0" prefHeight="17.0" prefWidth="11.0" text=".">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField id="thirdOctet" fx:id="thirdOctet" layoutX="99.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" promptText="0" text="0" />
+            <Label id="resultLabel" fx:id="resultLabel" layoutX="14.0" layoutY="44.0" prefHeight="17.0" prefWidth="164.0" text="11000000.10101000.00000000.00000001">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+            <Button layoutX="187.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClick" text="Button" />
+            <ChoiceBox id="maskChoiceBox" fx:id="choiceBox" layoutX="16.0" layoutY="63.0" prefHeight="25.0" prefWidth="166.0" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
