@@ -4,6 +4,7 @@ package calc;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -29,10 +30,10 @@ public class Controller implements Initializable {
 
 
     public void onClick() {
-        int first = Integer.parseInt(firstOctet.getText());
-        int second = Integer.parseInt(secondOctet.getText());
-        int third = Integer.parseInt(thirdOctet.getText());
-        int fourth = Integer.parseInt(fourthOctet.getText());
+        int first = validate(firstOctet);
+        int second = validate(secondOctet);
+        int third = validate(thirdOctet);
+        int fourth = validate(fourthOctet);
         Calculator calc = new Calculator(first,second,third,fourth);
         resultLabel.setText(calc.result());
     }
@@ -44,8 +45,15 @@ public class Controller implements Initializable {
         maskResultLabel.textProperty().bind(choiceBox.getSelectionModel().selectedItemProperty());
     }
 
-    private void validate(TextField textField) {
-        //TODO add validation
+    private int validate(TextField textField) {
+        int value = Integer.parseInt(textField.getText());
+        if (value>255 || value<0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Some text");
+            alert.showAndWait();
+            return 0; //change this
+        }
+        return value;
     }
     private String[] netmasks() {
         String m = "1111111111111111111111111111111100000000000000000000000000000000";
