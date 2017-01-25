@@ -1,5 +1,8 @@
 package calc;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+
 /**
  * Created by Administrator on 08.12.2016.
  */
@@ -9,15 +12,12 @@ class Calculator {
     private int thirdOctet;
     private int fourthOctet;
 
-    Calculator(int firstOctet, int secondOctet, int thirdOctet, int fourthOctet) {
-        this.firstOctet = firstOctet;
-        this.secondOctet = secondOctet;
-        this.thirdOctet = thirdOctet;
-        this.fourthOctet = fourthOctet;
-    }
-
-    String response() {
-        return "Lalala";
+    Calculator(TextField firstOctet, TextField secondOctet, TextField thirdOctet, TextField fourthOctet) {
+        int[] array = validate(firstOctet,secondOctet,thirdOctet,fourthOctet);
+        this.firstOctet = array[0];
+        this.secondOctet = array[1];
+        this.thirdOctet = array[2];
+        this.fourthOctet = array[3];
     }
 
     String result() {
@@ -33,5 +33,17 @@ class Calculator {
             result = binary;
         }
         return result;
+    }
+    private int[] validate(TextField textField1,TextField textField2,TextField textField3,TextField textField4) {
+        int[] arr = {Integer.parseInt(textField1.getText()),Integer.parseInt(textField2.getText()),Integer.parseInt(textField3.getText()),Integer.parseInt(textField4.getText())};
+        for (int value : arr) {
+            if (value>255 || value<0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Some text");
+                alert.showAndWait();
+                break;
+            }
+        }
+        return arr;
     }
 }

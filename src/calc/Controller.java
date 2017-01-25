@@ -30,11 +30,7 @@ public class Controller implements Initializable {
 
 
     public void onClick() {
-        int first = validate(firstOctet);
-        int second = validate(secondOctet);
-        int third = validate(thirdOctet);
-        int fourth = validate(fourthOctet);
-        Calculator calc = new Calculator(first,second,third,fourth);
+        Calculator calc = new Calculator(firstOctet,secondOctet,thirdOctet,fourthOctet);
         resultLabel.setText(calc.result());
     }
 
@@ -45,16 +41,6 @@ public class Controller implements Initializable {
         maskResultLabel.textProperty().bind(choiceBox.getSelectionModel().selectedItemProperty());
     }
 
-    private int validate(TextField textField) {
-        int value = Integer.parseInt(textField.getText());
-        if (value>255 || value<0) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Some text");
-            alert.showAndWait();
-            return 0; //change this
-        }
-        return value;
-    }
     private String[] netmasks() {
         String m = "1111111111111111111111111111111100000000000000000000000000000000";
         String[] array = new String[32];
