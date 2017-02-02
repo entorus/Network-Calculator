@@ -39,7 +39,7 @@ class Calculator {
         for (int value : arr) {
             if (value>255 || value<0) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Some text");
+                alert.setContentText("Value must bi between 0 and 255");
                 alert.showAndWait();
                 break;
             }
